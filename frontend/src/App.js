@@ -10,7 +10,7 @@ const App = () => {
 	return (
 		<Router>
 			<Header />
-			<main className='py-3'>
+			<main className='py-3 '>
 				<Container>
 					<Route exact path='/' component={HomePage} />
 					<Route exact path='/product/:id' component={ProductPage} />
