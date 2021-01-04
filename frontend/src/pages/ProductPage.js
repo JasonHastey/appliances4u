@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
 	Row,
@@ -12,15 +12,26 @@ import {
 } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import products from '../products'
+import axios from 'axios'
 
 const ProductPage = ({ match }) => {
-	const product = products.refridgerators.find(p => p._id === match.params.id)
+	const [product, set_product] = useState({})
+	//const product = products.refridgerators.find(p => p._id === match.params.id)
+	
+	useEffect(() => {
+		const fetchProduct = async () => {
+			const { data } = await axios.get(`/api/products/${match.params.id}`)
+			set_product(data)
+		}
+		fetchProduct()
+	},[])
+	
 	return (
 		<div>
 			<Link to='/' className='btn btn-dark'>
 				Go Back
 			</Link>
-			<Container>
+			{product.name && <Container>
 				<Row className='pt-4'>
 					<Col md={7}>
 						<Carousel>
@@ -55,7 +66,7 @@ const ProductPage = ({ match }) => {
 				<Row className='pt-4'>
 					<Col md={8}>
 						<ul>
-							{product.features.map(feature => (
+							{product.features && product.features.map(feature => (
 								<li>{feature}</li>
 							))}
 						</ul>
@@ -91,7 +102,7 @@ const ProductPage = ({ match }) => {
 						</Card>
 					</Col>
 				</Row>
-			</Container>
+			</Container>}
 		</div>
 	)
 }
