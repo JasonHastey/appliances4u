@@ -11,7 +11,6 @@ import {
 	Carousel,
 } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import products from '../products'
 import axios from 'axios'
 
 const ProductPage = ({ match }) => {
@@ -24,7 +23,7 @@ const ProductPage = ({ match }) => {
 			set_product(data)
 		}
 		fetchProduct()
-	},[])
+	},[match])
 	
 	return (
 		<div>
