@@ -1,7 +1,7 @@
 {
   "name": "e-toolz",
   "version": "1.0.0",
-  "description": "",
+  "description": "mern shopping app",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -24,8 +24,10 @@
   },
   "homepage": "https://github.com/JasonHastey/e-toolz#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "mongoose": "^5.11.10"
   },
   "devDependencies": {

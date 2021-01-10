@@ -1,7 +1,6 @@
-const products = {
-	refridgerators: [
+const products =
+	 [
 		{
-			_id: '1',
 			name: '28.2-cu ft French Door Refrigerator with Ice Maker',
 			brand: 'Samsung',
 			images: [
@@ -24,13 +23,13 @@ const products = {
 				'ENERGY STAR Certified: Eco-friendly and energy-efficient',
 			],
 			type: 'french door',
+			category: 'refridgerator',
 			price: 1899.99,
 			countInStock: 10,
 			rating: 4.8,
 			numReviews: 2008,
 		},
 		{
-			_id: '2',
 			name:
 				'25.2-cu ft 3-Door 36-in French Door Refrigerator with Ice Maker and Interior Water Dispenser - Fingerprint Resistant Stainless Steel',
 			brand: 'Whirlpool',
@@ -53,13 +52,13 @@ const products = {
 				'Fingerprint-resistant - hides fingerprints and smudges with steel that easily wipes clean',
 			],
 			type: 'french door',
+			category: 'refridgerator',
 			price: 1899.99,
 			countInStock: 10,
 			rating: 4.1,
 			numReviews: 3486,
 		},
 		{
-			_id: '3',
 			name:
 				'24.5-cu ft 4-Door 36-in French Door Refrigerator with Exterior Ice and Water Dispenser - Fingerprint Resistant Stainless Steel',
 			brand: 'Whirlpool',
@@ -82,13 +81,13 @@ const products = {
 				'Designed, engineered and assembled in the USA',
 			],
 			type: 'french door',
+			category: 'refridgerator',
 			price: 2499.99,
 			countInStock: 10,
 			rating: 3.9,
 			numReviews: 600,
 		},
 		{
-			_id: '4',
 			name:
 				'InstaView 27-cu ft French Door Refrigerator with Ice Maker and Door within Door (Fingerprint-Resistant Stainless Steel) ENERGY STAR',
 			brand: 'LG',
@@ -111,13 +110,13 @@ const products = {
 				'Save money and energy with this ENERGY STAR® qualified LG refrigerator that exceeds energy standards',
 			],
 			type: 'french door',
+			category: 'refridgerator',
 			price: 2399.99,
 			countInStock: 10,
 			rating: 4.9,
 			numReviews: 3945,
 		},
 		{
-			_id: '5',
 			name:
 				'22.4-cu ft Counter-depth French Door Refrigerator with Ice Maker (EasyCare Stainless Steel) ENERGY STAR',
 			brand: 'Frigidaire',
@@ -140,13 +139,13 @@ const products = {
 				'Deep freezer storage with adjustable divider keeps food organized and accessible',
 			],
 			type: 'french door',
+			category: 'refridgerator',
 			price: 2399.99,
 			countInStock: 10,
 			rating: 3.7,
 			numReviews: 1743,
 		},
 		{
-			_id: '6',
 			name:
 				'21.4-cu ft Side-by-Side Refrigerator with Ice Maker (Fingerprint-Resistant Stainless Steel)',
 			brand: 'Whirlpool',
@@ -169,13 +168,13 @@ const products = {
 				'Adaptive defrost automatically monitors the freezer environment and runs the cycle only when necessary',
 			],
 			type: 'side-by-side',
+			category: 'refridgerator',
 			price: 1399.99,
 			countInStock: 10,
 			rating: 4.2,
 			numReviews: 3003,
 		},
 		{
-			_id: '7',
 			name: '25.5-cu ft Side-by-Side Refrigerator with Ice Maker (Black)',
 			brand: 'Frigidaire',
 			images: [
@@ -183,7 +182,7 @@ const products = {
 				'/imgs/fr-fridge-25_5cuft/fr-fridge-25_5cuft1.jpg',
 				'/imgs/fr-fridge-25_5cuft/fr-fridge-25_5cuft2.jpg',
 			],
-			description: '',
+			description: 'none',
 			features: [
 				'Bright LED Lighting makes it easy to see what’s inside',
 				'Deli Drawer keeps sandwich meats and cheeses organized in a convenient location',
@@ -193,13 +192,13 @@ const products = {
 				'Full-width freezer shelf gives you more usable space to organize and store more',
 			],
 			type: 'side-by-side',
+			category: 'refridgerator',
 			price: 1399.99,
 			countInStock: 10,
 			rating: 3.9,
 			numReviews: 2033,
 		},
 		{
-			_id: '8',
 			name:
 				'27.4-cu ft Side-by-Side Refrigerator with Ice Maker (Fingerprint-Resistant Stainless Steel)',
 			brand: 'Samsung',
@@ -222,11 +221,12 @@ const products = {
 				'Two Clear Drawers: View, organize and access your fruits and vegetables',
 			],
 			type: 'side-by-side',
+			category: 'refridgerator',
 			price: 1399.99,
 			countInStock: 10,
 			rating: 4.7,
 			numReviews: 3638,
 		},
-	],
-}
+	]
+	
 export default products

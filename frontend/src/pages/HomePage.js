@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 
-const HomePage = () => {
+const HomePage = ({match}) => {
     const [products, set_products] = useState([])
 
     useEffect(() => {
@@ -12,12 +12,13 @@ const HomePage = () => {
             set_products(data)
         }
         fetchProducts()
-    },[])
+	},[products])
+	
 	return (
 		<div>
 			<h1>Latest Products</h1>
 			<Row>
-				{products.refridgerators && products.refridgerators.map(fridge => (
+				{products && products.map(fridge => (
 					<Col sm={12} md={6} lg={4}>
 						<Product product={fridge} />
 					</Col>
