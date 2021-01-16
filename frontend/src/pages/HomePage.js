@@ -1,31 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Row, Col } from 'react-bootstrap'
-import Product from '../components/Product'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Row, Col } from "react-bootstrap";
+import Product from "../components/Product";
+import ErrorMessage from "../components/ErrorMessage";
+import Loader from "../components/Loader";
+import { listProducts } from "../redux/actions/productActions";
 
-const HomePage = ({match}) => {
-    const [products, set_products] = useState([])
+const HomePage = ({ match }) => {
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const {data} = await axios.get('/api/products')
-            set_products(data)
-        }
-        fetchProducts()
-	},[products])
-	
-	return (
-		<div>
-			<h1>Latest Products</h1>
-			<Row>
-				{products && products.map(fridge => (
-					<Col sm={12} md={6} lg={4}>
-						<Product product={fridge} />
-					</Col>
-				))}
-			</Row>
-		</div>
-	)
-}
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
 
-export default HomePage
+  return (
+    <div>
+      <h1>Latest Products</h1>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <ErrorMessage variant='danger'>{error}</ErrorMessage>
+      ) : (
+        <Row>
+          {products &&
+            products.map((fridge) => (
+              <Col sm={12} md={6} lg={4}>
+                <Product product={fridge} />
+              </Col>
+            ))}
+        </Row>
+      )}
+    </div>
+  );
+};
+
+export default HomePage;
