@@ -14,7 +14,7 @@ import {
 } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
-import ErrorMessage from '../components/ErrorMessage'
+import Message from '../components/Message'
 
 import { listProductDetails } from '../redux/actions/productActions'
 
@@ -41,7 +41,7 @@ const ProductPage = ({ history, match }) => {
 			{loading ? (
 				<Loader />
 			) : error ? (
-				<ErrorMessage variant='danger'>{error}</ErrorMessage>
+				<Message variant='danger'>{error}</Message>
 			) : (
 				<Container>
 					<Row className='pt-4'>
@@ -49,7 +49,7 @@ const ProductPage = ({ history, match }) => {
 							<Carousel>
 								{product.images &&
 									product.images.map(img => (
-										<Carousel.Item>
+										<Carousel.Item key={img.id}>
 											<Image src={img} fluid />
 										</Carousel.Item>
 									))}
@@ -80,7 +80,9 @@ const ProductPage = ({ history, match }) => {
 						<Col md={8}>
 							<ul>
 								{product.features &&
-									product.features.map(feature => <li>{feature}</li>)}
+									product.features.map((feature, index) => (
+										<li key={index}>{feature}</li>
+									))}
 							</ul>
 						</Col>
 						<Col md={4}>
