@@ -48,8 +48,8 @@ const ProductPage = ({ history, match }) => {
 						<Col md={7}>
 							<Carousel>
 								{product.images &&
-									product.images.map(img => (
-										<Carousel.Item key={img.id}>
+									product.images.map((img, indx) => (
+										<Carousel.Item key={img.id} key={indx}>
 											<Image src={img} fluid />
 										</Carousel.Item>
 									))}
